@@ -1,0 +1,14 @@
+{
+    "name": "admin.alexdevid.ru",
+    "version": "0.0.1",
+    "authors": [
+        "Alexander <kerdevid@gmail.com>"
+    ],
+    "private": true,
+    "ignore": [
+        "bower_components"
+    ],
+    "dependencies": {
+        "bootstrap": "latest"
+    }
+}

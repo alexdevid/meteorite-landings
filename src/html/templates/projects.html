@@ -1,0 +1,58 @@
+<div class="row" ng-controller="ProjectsController">
+    <div class="col-lg-2 project-list">
+        <div class="list-group">
+            <a href="/#/projects/{{ Project.id}}" class="list-group-item" ng-repeat="Project in Projects">{{ Project.title}}</a>
+        </div>
+    </div>
+    <div class="col-lg-10 project-form">
+        <form action="#">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Title..." ng-model="Current.title"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Url..." ng-model="Current.url"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Tags..." data-role="tagsinput"/>
+					</div>
+					<div class="form-group">
+						<div text-angular ng-model="Current.description"></div>
+					</div>
+					<a class="btn btn-lg btn-info" ng-click="save()">
+						Save <i class="fa fa-save"></i>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="project-preview">
+								<img ng-src="{{ Current.image}}" alt="" />
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div flow-init="{target: '/upload'}"
+								 flow-files-submitted="$flow.upload()"
+								 flow-file-success="$file.msg = $message">
+
+								<span class="btn" flow-btn>Upload File</span>
+								<!--
+								<div class="upload-field"></div>
+								<input type="file" ng-file-select="onFileSelect($files)" class="form-control">
+								<button class="btn btn-success btn-block">Upload <i class="fa fa-cloud-upload"></i></button>
+								-->
+								<table>
+									<tr ng-repeat="file in $flow.files">
+										<td>{{$index + 1}}</td>
+										<td>{{file.name}}</td>
+										<td>{{file.msg}}</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+        </form>
+    </div>
+</div>

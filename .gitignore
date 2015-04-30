@@ -1,0 +1,11 @@
+nbproject
+npm-debug.log
+.idea
+public/assets/css
+public/assets/js
+public/assets/vendors
+public/index.html
+node_modules
+bower_components
+.sass-cache
+/config/config.js
